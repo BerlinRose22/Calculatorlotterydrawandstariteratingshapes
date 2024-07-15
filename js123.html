@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS exam 1</title>
+</head>
+<body>
+	<label for="num1">Enter the first input: </label>
+	<input type="text" id="num1"><br><br>
+	<label for="num2">Enter the second input: </label>
+	<input type="text" id="num2"><br><br>
+	<label for="op">Select any below listed operator: </label>
+	<select id="op">
+		<option>+</option>
+		<option>-</option>
+		<option>*</option>
+		<option>/</option>
+	</select><br><br>
+	<button type="button" onclick="myFunction()">Equals(=)</button><br><br>
+	<label for="ans">The final answer is:</label>
+	<input type="text" id="ans">
+
+	<script>
+		function myFunction()
+		{
+			var a=parseInt(document.getElementById("num1").value);
+			var b=parseInt(document.getElementById("num2").value);
+			var operator=document.getElementById("op").value;
+			
+			if(operator=="+")
+				add(a,b);
+			else if(operator=="-")
+				difference(a,b);
+			else if(operator=="*")
+				multiplication(a,b);
+			else
+				division(a,b);
+		}
+		
+		function add(a,b)
+		{
+			var sum=a+b;
+			document.getElementById("ans").value=sum;
+		}
+		function difference(a,b)
+		{
+			var diff=a-b;
+			document.getElementById("ans").value=diff;
+		}
+		function multiplication(a,b)
+		{
+			var mul=a*b;
+			document.getElementById("ans").value=mul;
+		}
+		function division(a,b)
+		{
+			var div=a/b;
+			document.getElementById("ans").value=div;
+		}
+	</script>
+
+</body>
+</html>

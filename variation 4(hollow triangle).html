@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hollow Left Triangle Pattern</title>
+</head>
+<body>
+    <pre id="triangle"></pre>
+
+    <script> 
+    function printHollowLeftTriangle(height) {
+    let output = '';
+
+    for (let i= 0; i< height; i++) {
+        for (let j = 0; j < height; j++) {
+            if (j === 0 || i === height - 1 || i === j) {
+                output += ' * ';
+            } else {
+                output += '   ';
+            }
+        }
+        output += '\n';
+    }
+
+    return output;
+}
+
+document.getElementById('triangle').innerHTML = printHollowLeftTriangle(5);
+</script>
+</body>
+</html>

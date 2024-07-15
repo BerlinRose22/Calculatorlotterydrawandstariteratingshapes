@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hollow Square</title>
+</head>
+<body>
+
+  <pre id="Square"></pre>
+  <script type="text/javascript">
+    function createSquare(size) {
+      let string = '';
+
+      for (let i = 1; i <= size; i++) {
+        for (let j = 1; j <= size; j++) {
+          switch (true) {
+            case (i === 1 || i === size || j === 1 || j === size):
+              string += '* ';
+              break;
+            default:
+              string += '  ';
+          }
+        }
+        string += '\n';
+      }
+
+      return string;
+    }
+
+    document.getElementById("Square").innerHTML = createSquare(3);
+  </script>
+
+</body>
+</html>
